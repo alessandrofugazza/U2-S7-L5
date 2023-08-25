@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CRUDAZON - back-office</title>
+    <link href="./dist/css/style.min.css" rel="stylesheet" />
+  </head>
+  <body data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CRUDAZON</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="./homepage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Back-office</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <main class="pt-5">
+        <h1>Back-office</h1>
+        <hr class="mb-5" />
+        <form>
+          <div class="mb-3">
+            <label for="productName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="productName" aria-describedby="productName" required />
+          </div>
+          <div class="mb-3">
+            <label for="productDescription" class="form-label">Description</label>
+            <input type="text" class="form-control" id="productDescription" />
+          </div>
+          <div class="mb-3">
+            <label for="productBrand" class="form-label">Brand</label>
+            <input type="text" class="form-control" id="productBrand" required />
+          </div>
+          <div class="mb-3">
+            <label for="productImage" class="form-label">Image</label>
+            <input type="text" class="form-control" id="productImage" required />
+          </div>
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Price</label>
+            <input type="number" class="form-control" id="productPrice" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+          <button type="button" id="reset-btn" class="btn btn-primary">Reset</button>
+        </form>
+        <hr />
+        <h2>Added Products</h2>
+        <ul id="added-products"></ul>
+      </main>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    </script>
+    <script src="./scripts/back-office.js"></script>
+  </body>
+</html>
