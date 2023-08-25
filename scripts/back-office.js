@@ -102,7 +102,12 @@ const editProduct = data => {
   deleteBtn.setAttribute("type", "button");
   deleteBtn.className = "btn btn-danger edit-buttons ms-2";
   deleteBtn.innerText = "Delete";
-  deleteBtn.addEventListener("click", () => deleteProduct(data));
+  deleteBtn.addEventListener("click", () => {
+    if (!confirm("Are you sure you want to delete this product? This action cannot be undone.")) {
+      return;
+    }
+    deleteProduct(data);
+  });
   productForm.appendChild(deleteBtn);
 };
 
@@ -176,4 +181,9 @@ const resetFields = () => {
   formFields.forEach(field => (field.value = ""));
 };
 
-resetBtn.addEventListener("click", resetFields);
+resetBtn.addEventListener("click", () => {
+  if (!confirm("Are you sure you want to reset the form? This action cannot be undone.")) {
+    return;
+  }
+  resetFields();
+});
