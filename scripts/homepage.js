@@ -14,6 +14,7 @@ window.onload = async () => {
     throw new Error("error");
   }
   const products = await re.json();
+  document.querySelector(".spinner-border").className = "d-none";
   products.forEach(product => {
     const card = document.createElement("div");
     card.className = "card";
